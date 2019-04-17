@@ -1,0 +1,15 @@
+import datetime
+
+date_format = "%d.%m.%Y"
+my_bd=input("Въведи рожденната си дата във формат 10.04.2000: ")
+bd = datetime.datetime.strptime(my_bd, date_format)
+today=datetime.datetime.today()
+delta = today - bd
+de=delta.days
+se=delta.seconds
+
+moon_months=round(de/28,2)
+years=round(de/365,2)
+
+my_time=[years,moon_months,de,se]
+print(my_time)

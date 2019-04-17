@@ -1,0 +1,20 @@
+seq=input("Въведете секвенция: ")
+#seq="abcds"
+sq=[]
+com=[]
+for s in enumerate(seq):
+    sq.append(s)
+
+for i in range(0,len(sq)):
+    if sq[i][1]=='a':
+        com.append('t')
+    elif sq[i][1] == 't':
+        com.append('a')
+    elif sq[i][1] == 'c':
+        com.append('g')
+    elif sq[i][1] == 'g':
+        com.append('c')
+    else: com.append('n')
+
+print(com) # комплементарната верига
+print(com[::-1]) # обратната на комплементартната верига

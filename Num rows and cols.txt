@@ -1,0 +1,26 @@
+def re(m,raws,cols):
+   import numpy as np
+   b=np.array(m)
+   print("Масивът е: ")
+   print(b)
+   b=b.reshape(raws,cols)
+   print("Преформатирания масив е: ")
+   print(b)
+   return(b)
+
+n=int(input("Колко числа ще въведете: "))
+a=[]
+
+for i in range(0,n):
+  a.append(int(input("a["+str(i)+"]= ")))
+print("Списъкът е: ")
+print(a)
+
+r=int(input("Брой редове: "))
+if r>n:
+    print("Редовете не могат да бъдат повече от броя на числата!")
+elif n%r==0:
+    c=n//r
+    re(a,r,c)
+else:
+    print("Броят на числата трябва да се дели точно на броя на редовете!")

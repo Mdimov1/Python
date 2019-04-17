@@ -1,0 +1,21 @@
+import numpy as np
+
+r=int(input("rows: "))
+col=int(input("cols: "))
+c=np.empty((r,col),dtype=np.int)
+
+for i in range(0,r):
+    for j in range (0,col):
+        st="input c["+str(i)+","+str(j)+"]="
+        c[i,j]=int(input(st))
+
+print(c)
+
+# print(c.reshape(1,r*col))
+# print(np.reshape(c,(r*col,1)))
+
+print(c.sum(axis=0))
+print(c.sum(axis=0)[0])
+print(c[::,1].sum(axis=0))
+cond=c>15
+print(c[cond])

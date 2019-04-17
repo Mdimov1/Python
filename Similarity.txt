@@ -1,0 +1,36 @@
+# Дадени са три списъка с цели числа (генерирате ги сами) с еднакъв брой елементи
+# Всеки списък представлява страна от триъгълник
+# Ако i е номера на триъгълника, а списък[i] е страна в i-тия триъгълник, да се открият:
+# f_sim: подобните триъгълници:
+# признак за подобие 1: a_1/а_2=b_1/b_2 или c_1/c_2=b_1/b_2 или a_1/а_2=c_1/c_2
+
+try:
+    from math import sqrt
+except:
+    import math
+
+a=[x for x in range(1,10)]
+b=[1.5*x for x in a]
+c=[1.5*x for x in b]
+tri=[]
+abc=[]
+for i in range(0,len(a)):
+    abc.append([a[i],b[i],c[i]])
+
+for i in range(0,len(a)):
+    for j in range(i+1, len(a)):
+        cond_1= a[i]/a[j]==b[i]/b[j]
+        cond_2= c[i]/c[j]==b[i]/b[j]
+        cond_3= a[i]/a[j]==c[i]/c[j]
+        if cond_1 & cond_2 & cond_3:
+            tri.append([i,j])
+
+if tri==[]:
+    print("не открихме подобни триъгълници")
+else:
+    print(tri)
+    f = open("TRI_SIM.txt", "w+")
+    for k in range(0, len(tri)):
+        f.write(str(tri[k]) + "\n")
+    f.close()
+
