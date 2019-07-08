@@ -1,14 +1,14 @@
 
 #y(x)=a*x**2+b*x+c=0
 #D=b**2-4*a*c
-#if D>=0 -> produljava
-#if D<0 -> izvejda nqma rehsnie
+#if D>=0 -> продължава
+#if D<0 -> няма решение
 #x1=(-b+sqrt(b**2-4*a*c))/(2*a)
 #x2=(-b-sqrt(b**2-4*a*c))/(2*a)
-#izvejda korenite
-#float(input("vuvedete a: "))
-#float(input("vuvedete b: "))
-#float(input("vuvedete c: "))
+#извежда корените
+#float(input("Въведете a: "))
+#float(input("Въведете b: "))
+#float(input("Въведете c: "))
 
 from math import sqrt
 print("y(x)=a*x^2+b*x+c")
@@ -32,10 +32,10 @@ for i in range(1,10):
     for j in range(1,10):
         for k in range(1,10):
           koreni(i,j,k)
-print("Pri slednite parametri, nqma realni koreni:")
+print("При следните параметри, няма реални корени:")
 for ii in range(0,len(result_nrr)):
     print(result_nrr[ii])
-print("Pri slednite parametri, ima realni koreni:")
+print("При следните параметри, има реални корени:")
 for jj in range(0,len(result)):
     print(result[jj])
 
