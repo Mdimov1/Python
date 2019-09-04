@@ -2,10 +2,10 @@ import numpy as np
 
 r=int(input("rows: "))
 col=int(input("cols: "))
-c=np.empty((r,col),dtype=np.int)
+c=np.empty((r, col), dtype=np.int)
 
-for i in range(0,r):
-    for j in range (0,col):
+for i in range(0, r):
+    for j in range (0, col):
         st="input c["+str(i)+","+str(j)+"]="
         c[i,j]=int(input(st))
 print("Първоначалният масив е: \n"+str(c))
@@ -16,19 +16,19 @@ per=c.sum(axis=ax)>cc
 per=per.astype(int)
 
 if ax==1:
-    per=per.reshape(r,1)
+    per=per.reshape(r, 1)
 else:
-    per=per.reshape(1,col)
+    per=per.reshape(1, col)
 
-dn=np.concatenate((c,per),axis=ax)
+dn=np.concatenate((c, per), axis=ax)
 
 print("Новият масив е: \n"+str(dn))
 
 if ax==1:
     cond2=dn[::,col]==1
-    fdn=dn[cond2,0:col]
+    fdn=dn[cond2, 0:col]
 else:
     cond2=dn[r,::]==1
-    fdn=dn[0:r,cond2]
+    fdn=dn[0:r, cond2]
 
 print("Филтрираният масив е: \n"+str(fdn))
